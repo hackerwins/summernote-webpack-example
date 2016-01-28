@@ -9,13 +9,12 @@ var config = {
   entry: './src/main',
   output: {
     path: path.join(__dirname, 'public'),
-    filename: '[name].js',
-    chunkFilename: '[chunkhash].js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
-    { test: /\.css$/, loader: 'style-loader!css-loader' },
-    { test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=100000' }
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=100000' }
     ]
   },
   plugins: [
@@ -32,10 +31,11 @@ var config = {
   ]
 };
 
-gulp.task('server', function(callback) {
-  var compiler = webpack(config);
+var serverConfig = Object.assign(config, {
+});
 
-  var server = new WebpackDevServer(compiler, {
+gulp.task('server', function(callback) {
+  var server = new WebpackDevServer(webpack(serverConfig), {
     stats: {
       colors: true
     }
@@ -49,3 +49,16 @@ gulp.task('server', function(callback) {
     gutil.log('[webpack-dev-server]', 'http://localhost:8080');
   });
 });
+
+gulp.task('build', function(callback) {
+  webpack(config, function(err, stats) {
+    if (err) {
+      throw new gutil.PluginError('webpack-dev-server', err);
+    }
+
+    gutil.log('[webpack]', stats.toString());
+    callback();
+  });
+});
+
+gulp.task('default', ['build']);

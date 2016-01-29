@@ -1,5 +1,14 @@
 # summernote-webpack-example
 
+Feel free to send a pull request.
+
+## versions
+* "bootstrap": "^3.3.6"
+* "codemirror": "^5.11.0"
+* "font-awesome": "^4.5.0"
+* "jquery": "^2.2.0"
+* "summernote": "^0.7.3"
+
 ## installation
 
 ```

@@ -7,7 +7,7 @@ Feel free to send a pull request.
 * "codemirror": "^5.11.0"
 * "font-awesome": "^4.5.0"
 * "jquery": "^2.2.0"
-* "summernote": "^0.7.3"
+* "summernote": "^0.8.1"
 
 ## installation
 

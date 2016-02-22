@@ -13,7 +13,7 @@
     "codemirror": "^5.11.0",
     "font-awesome": "^4.5.0",
     "jquery": "^2.2.0",
-    "summernote": "^0.7.3"
+    "summernote": "^0.8.1"
   },
   "devDependencies": {
     "css-loader": "^0.23.1",

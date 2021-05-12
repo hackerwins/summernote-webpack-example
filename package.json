@@ -13,7 +13,7 @@
     "@babel/core": "^7.8.7",
     "bootstrap": "^4.4.1",
     "codemirror": "^5.58.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.16.1",
     "summernote": "^0.8.16"
   },
